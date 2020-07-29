@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-    <display-name>Gestor Desayunos</display-name>
+    <display-name>Gestor de Desayunos</display-name>
     <servlet>
         <servlet-name>spring</servlet-name>
         <servlet-class>
@@ -16,4 +16,29 @@
         <servlet-name>spring</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
+	<error-page>
+		<!-- Missing login -->
+		<error-code>401</error-code>
+		<location>/404</location>
+	</error-page>
+	<error-page>
+		<!-- Forbidden directory listing -->
+		<error-code>403</error-code>
+		<location>/403</location>
+	</error-page>
+	<error-page>
+	    <!-- Missing resource -->
+	    <error-code>404</error-code>
+	    <location>/404</location>
+	</error-page>
+	<error-page>
+	    <!-- Uncaught exception -->
+	    <error-code>500</error-code>
+	    <location>/500</location>
+	</error-page>
+	<error-page>
+	    <!-- Unsupported servlet method -->
+	    <error-code>503</error-code>
+	    <location>/500</location>
+	</error-page>
 </web-app>
